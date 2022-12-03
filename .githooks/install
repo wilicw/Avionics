@@ -1,0 +1,18 @@
+#!/bin/sh
+
+if ! test -d .git; then
+    echo "Execute .githooks/install in the top-level directory."
+    exit 1
+fi
+
+ln -sf ../../.githooks/pre-commit .git/hooks/pre-commit || exit 1
+chmod +x .git/hooks/pre-commit
+
+ln -sf ../../.githooks/commit-msg .git/hooks/commit-msg || exit 1
+chmod +x .git/hooks/commit-msg
+
+touch .git/hooks/applied || exit 1
+
+echo
+echo "Git commit hooks are installed successfully."
+

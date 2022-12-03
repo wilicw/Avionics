@@ -1,5 +1,11 @@
-all:
+GIT_HOOKS := .git/hooks/applied
+
+all: $(GIT_HOOKS)
 	pio -f -c vim run
+
+$(GIT_HOOKS):
+	@.githooks/install
+	@echo
 
 upload:
 	pio -f -c vim run --target upload
