@@ -20,4 +20,4 @@ uploadfs:
 	pio -f -c vim run --target uploadfs
 
 update:
-	pio -f -c vim update
+	pio pkg update

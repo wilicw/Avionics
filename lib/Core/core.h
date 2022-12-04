@@ -1,5 +1,10 @@
+#ifndef _CORE_H_
+#define _CORE_H_
+
 #include <Arduino.h>
 #include <stdint.h>
+
+#include "../Indicator/indicator.h"
 
 typedef enum {
   CORE_INIT,
@@ -13,3 +18,5 @@ typedef struct {
 } core_handle_t;
 
 void core_thread();
+
+#endif

@@ -7,6 +7,7 @@ static core_handle_t core_handler = {
 void core_thread() {
   switch (core_handler.state) {
     case CORE_INIT:
+      indicator_init();
       core_handler.state = CORE_CONNECTING;
       core_handler.last_checking_time = 0;
       break;
@@ -15,6 +16,7 @@ void core_thread() {
         Serial.println("...");
         core_handler.last_checking_time = millis();
       }
+      indicator_connecting();
       break;
     case CORE_OPERATING:
       break;
