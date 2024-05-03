@@ -28,3 +28,4 @@ fp-info-cache
 *.xml
 *.csv
 Jlcpcb
+!isp32.csv
